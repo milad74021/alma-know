@@ -10,28 +10,22 @@
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
-/* Fonts */
+/* Fonts & Global Variables (Consolidated) */
 :root {
+  /* Fonts */
   --default-font: "Inter", "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Inter", "Raleway", sans-serif;
   --nav-font: "Inter", "Poppins", sans-serif;
-}
 
-/* Global Colors - Modern Color Palette */
-:root {
-  --background-color: #0a0a0a;
-  /* Dark background */
-  --default-color: #e0e0e0;
-  /* Light text */
-  --heading-color: #ffffff;
-  /* Pure white headings */
-  --accent-color: #6366f1;
-  /* Modern indigo */
+  /* Global Colors - Modern Color Palette */
+  --background-color: #0a0a0a; /* Dark background */
+  --default-color: #e0e0e0; /* Light text */
+  --heading-color: #ffffff; /* Pure white headings */
+  --accent-color: #6366f1; /* Modern indigo */
   --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-  --surface-color: rgba(255, 255, 255, 0.05);
-  /* Glass morphism */
+  --surface-color: rgba(255, 255, 255, 0.05); /* Glass morphism */
   --surface-hover: rgba(255, 255, 255, 0.1);
   --contrast-color: #ffffff;
   --text-muted: #a0a0a0;
@@ -40,21 +34,14 @@
   --success-color: #10b981;
   --warning-color: #f59e0b;
   --error-color: #ef4444;
-}
 
-/* Nav Menu Colors - Modern Navigation */
-:root {
+  /* Nav Menu Colors - Modern Navigation */
   --nav-color: #000;
-  --nav-hover-color: #e0e0e0;
-  /* Accent color on hover */
-  --nav-mobile-background-color: rgba(10, 10, 10, 0.95);
-  /* Dark mobile nav */
-  --nav-dropdown-background-color: rgba(10, 10, 10, 0.95);
-  /* Dark dropdown */
-  --nav-dropdown-color: #e0e0e0;
-  /* Light dropdown text */
-  --nav-dropdown-hover-color: #6366f1;
-  /* Accent hover */
+  --nav-hover-color: #e0e0e0; /* Accent color on hover */
+  --nav-mobile-background-color: rgba(10, 10, 10, 0.95); /* Dark mobile nav */
+  --nav-dropdown-background-color: rgba(10, 10, 10, 0.95); /* Dark dropdown */
+  --nav-dropdown-color: #e0e0e0; /* Light dropdown text */
+  --nav-dropdown-hover-color: #6366f1; /* Accent hover */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -77,10 +64,7 @@
   --surface-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
-}
+/* Smooth scroll handled on html */
 
 /* Prevent scroll jump on page load */
 html {
@@ -171,10 +155,7 @@ body::before {
   }
 }
 
-.logo-img {
-  max-height: 50px;
-  margin: 10px;
-}
+/* .logo-img consolidated below with richer styles */
 
 .lang-switch {
   background: rgba(255, 255, 255, 0.08);
@@ -2046,21 +2027,5 @@ section,
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .navmenu li {
-    flex-basis: calc(33.333% - 10px);
-    max-width: calc(33.333% - 10px);
-    display: flex;
-    justify-content: center;
-  }
-
-  .navmenu a {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    margin: 5px 0;
   }
 }
