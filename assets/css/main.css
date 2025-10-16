@@ -143,35 +143,6 @@ body.ltr {
   opacity: 1;
 }
 
-/* Ensure smooth page load */
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* Prevent flash of unstyled content */
-body {
-  visibility: hidden;
-}
-
-body.loaded {
-  visibility: visible;
-}
-
-body.rtl {
-  direction: rtl;
-  text-align: right;
-  font-family: "Tahoma", sans-serif;
-}
-
-body.ltr {
-  direction: ltr;
-  text-align: left;
-  font-family: "Roboto", sans-serif;
-}
-
 /* Modern animated background */
 body::before {
   content: "";
@@ -1074,45 +1045,9 @@ section,
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 60px 0;
-  scroll-margin-top: 90px;
+  scroll-margin-top: 70px;
   overflow: clip;
   position: relative;
-}
-
-/* Improved scroll margin for sections */
-section,
-.section {
-  scroll-margin-top: 70px;
-  /* Default scroll margin */
-}
-
-/* Remove duplicate media queries for scroll margin */
-@media (max-width: 1200px) {
-  section,
-  .section {
-    scroll-margin-top: 60px;
-  }
-}
-
-@media (max-width: 992px) {
-  section,
-  .section {
-    scroll-margin-top: 55px;
-  }
-}
-
-@media (max-width: 768px) {
-  section,
-  .section {
-    scroll-margin-top: 120px;
-  }
-}
-
-@media (max-width: 576px) {
-  section,
-  .section {
-    scroll-margin-top: 150px;
-  }
 }
 
 /* Consolidate into a single, more responsive media query */
@@ -2127,40 +2062,5 @@ section,
     text-align: center;
     padding: 10px;
     margin: 5px 0;
-  }
-}
-
-@media (max-width: 1200px) {
-  body {
-    padding-top: clamp(40px, 6vw, 60px);
-  }
-}
-
-@media (max-width: 992px) {
-  body {
-    padding-top: 55px;
-    /* Further reduced for smaller tablets */
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    padding-top: 50px;
-    /* Reduced for mobile landscape */
-  }
-}
-
-@media (max-width: 576px) {
-  body {
-    padding-top: 45px;
-    /* Minimal padding for small mobile screens */
-  }
-}
-
-/* Landscape orientation adjustments */
-@media (max-width: 768px) and (orientation: landscape) {
-  body {
-    padding-top: 40px;
-    /* Even less padding for landscape mode */
   }
 }
