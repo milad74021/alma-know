@@ -195,18 +195,14 @@
     });
 
     document.querySelectorAll("[data-en-placeholder]").forEach((el) => {
-      if (el.tagName.toLowerCase() === 'input') {
-        if (lang === "fa") {
-          el.value = el.getAttribute("data-fa-placeholder");
-        } else {
-          el.value = el.getAttribute("data-en-placeholder");
-        }
-      } else {
-        if (lang === "fa") {
-          el.textContent = el.getAttribute("data-fa-placeholder");
-        } else {
-          el.textContent = el.getAttribute("data-en-placeholder");
-        }
+      const tag = el.tagName.toLowerCase();
+      const placeholderText = lang === "fa"
+        ? el.getAttribute("data-fa-placeholder")
+        : el.getAttribute("data-en-placeholder");
+
+      if (tag === 'input' || tag === 'textarea') {
+        // Set placeholder attribute only; never override user's typed value
+        el.setAttribute('placeholder', placeholderText || '');
       }
     });
 
@@ -230,6 +226,46 @@
    */
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    const submitBtn = contactForm.querySelector('.btn-submit');
+    const requiredFields = ['name','email','subject','message']
+      .map((n) => contactForm.querySelector(`[name="${n}"]`))
+      .filter(Boolean);
+
+    function isValidEmail(email) {
+      // Basic RFC 5322 compliant-ish pattern, good enough for client-side
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+    }
+
+    function validateField(field) {
+      const raw = (field.value || '').trim();
+      let valid = raw.length > 0;
+      if (valid && field.name === 'email') {
+        valid = isValidEmail(raw);
+      }
+
+      field.classList.toggle('is-invalid', !valid);
+      field.setAttribute('aria-invalid', String(!valid));
+      return valid;
+    }
+
+    function validateForm() {
+      const allValid = requiredFields.every(validateField);
+      if (submitBtn) submitBtn.disabled = !allValid;
+      return allValid;
+    }
+
+    // Live validation
+    requiredFields.forEach((f) => {
+      f.addEventListener('input', () => {
+        validateField(f);
+        validateForm();
+      });
+      f.addEventListener('blur', () => validateField(f));
+    });
+
+    // Initial state
+    validateForm();
+
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
@@ -241,17 +277,13 @@
       errorMessage.style.display = 'none';
       sentMessage.style.display = 'none';
       loadingMessage.style.display = 'none';
-      
-      // Get form data
-      const formData = new FormData(contactForm);
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const subject = formData.get('subject');
-      const message = formData.get('message');
-      
-      // Validate form
-      if (!name || !email || !subject || !message) {
+
+      // Final validation guard
+      const isFormValid = validateForm();
+      if (!isFormValid) {
         errorMessage.style.display = 'flex';
+        const firstInvalid = requiredFields.find((f) => f.classList.contains('is-invalid')) || requiredFields[0];
+        if (firstInvalid && typeof firstInvalid.focus === 'function') firstInvalid.focus();
         return;
       }
       
@@ -263,6 +295,7 @@
         loadingMessage.style.display = 'none';
         sentMessage.style.display = 'flex';
         contactForm.reset();
+        validateForm();
         
         // Hide success message after 5 seconds
         setTimeout(() => {

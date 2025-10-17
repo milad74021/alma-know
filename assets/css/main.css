@@ -1731,9 +1731,6 @@ section,
 /*--------------------------------------------------------------
 # Modern Contact Section
 --------------------------------------------------------------*/
-.contact {
-  padding: 100px 0;
-}
 
 .contact .info-item {
   background: var(--surface-color);
