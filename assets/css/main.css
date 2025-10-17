@@ -20,29 +20,40 @@
   --default-font: "Inter", "Poppins", sans-serif; */
 
   /* Global Colors - Modern Color Palette */
-  --background-color: #0a0a0a;
+  --background-color: #162a2e;
   /* Dark background */
   --default-color: #e0e0e0;
   /* Light text */
   --heading-color: #ffffff;
   /* Pure white headings */
-  --accent-color: #6366f1;
-  /* Modern indigo */
-  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-  --surface-color: rgba(255, 255, 255, 0.05);
+  /* Brand Palette (AlmaKnow) */
+  --brand-primary: #0a7e83; /* teal from logo */
+  --brand-primary-600: #08666a;
+  --brand-primary-400: #13a8ad;
+  --brand-highlight: #22d3ee; /* bright cyan accent */
+
+  /* Use brand palette as site accent */
+  --accent-color: var(--brand-primary);
+  --accent-gradient: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-400) 55%, var(--brand-highlight) 100%);
+  --accent-shadow: color-mix(in srgb, var(--accent-color), transparent 70%);
+  --surface-color: rgba(255, 255, 255, 0.12);
   /* Glass morphism */
-  --surface-hover: rgba(255, 255, 255, 0.1);
+  --surface-hover: rgba(255, 255, 255, 0.22);
   --contrast-color: #ffffff;
-  --text-muted: #a0a0a0;
-  --border-color: rgba(255, 255, 255, 0.1);
+  --text-muted: #b8c4c4;
+  --border-color: rgba(255, 255, 255, 0.16);
   --shadow-color: rgba(0, 0, 0, 0.3);
   --success-color: #10b981;
   --warning-color: #f59e0b;
   --error-color: #ef4444;
 
+  /* Header brand-tinted backgrounds */
+  --header-bg: color-mix(in srgb, var(--brand-primary), #0a0a0a 75%);
+  --header-bg-scrolled: color-mix(in srgb, var(--brand-primary-600), #0a0a0a 82%);
+
   /* Nav Menu Colors - Modern Navigation */
-  --nav-color: #000;
-  --nav-hover-color: #e0e0e0;
+  --nav-color: #e0e0e0;
+  --nav-hover-color: #ffffff;
   /* Accent color on hover */
   --nav-mobile-background-color: rgba(10, 10, 10, 0.95);
   /* Dark mobile nav */
@@ -100,7 +111,7 @@ body {
   color: var(--default-color);
   background: var(--background-color);
   font-family: var(--default-font);
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  background: linear-gradient(135deg, #162a2e 0%, #1b3a3f 50%, #184048 100%);
   position: relative;
   direction: rtl;
   overflow-x: hidden;
@@ -223,14 +234,14 @@ body::before {
   color: var(--contrast-color);
   border-color: var(--accent-color);
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 20px var(--accent-shadow);
 }
 
 .lang-switch.active {
   background: var(--accent-gradient);
   color: var(--contrast-color);
   border-color: var(--accent-color);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 6px 20px var(--accent-shadow);
 }
 
 @media (min-width: 1366px) {
@@ -316,11 +327,11 @@ h6 {
 # Enhanced Modern Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(10, 10, 10, 0.85);
+  --background-color: var(--header-bg);
   color: var(--default-color);
-  background: rgba(10, 10, 10, 0.85);
+  background: var(--header-bg);
   backdrop-filter: blur(25px);
-  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
   padding: 15px 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 9999;
@@ -333,10 +344,10 @@ h6 {
 }
 
 .header.scrolled {
-  background: rgba(10, 10, 10, 0.95);
+  background: var(--header-bg-scrolled);
   backdrop-filter: blur(35px);
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
-  border-bottom-color: rgba(99, 102, 241, 0.4);
+  border-bottom-color: color-mix(in srgb, var(--accent-color), transparent 60%);
   padding: 12px 0;
 }
 
@@ -369,7 +380,7 @@ h6 {
   max-height: 45px;
   margin: 8px;
   transition: all 0.3s ease;
-  filter: drop-shadow(0 4px 8px rgba(99, 102, 241, 0.3));
+  filter: drop-shadow(0 4px 8px var(--accent-shadow));
 }
 
 .header.scrolled .logo-img {
@@ -431,7 +442,7 @@ h6 {
 
 .navmenu>ul>li {
   white-space: nowrap;
-  padding: 8px 0;
+  padding: 8px 4px;
 }
 
 .navmenu>ul>li:last-child {
@@ -463,14 +474,14 @@ h6 {
   background: var(--accent-gradient);
   backdrop-filter: blur(15px);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.25);
-  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 6px 18px var(--accent-shadow);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 50%);
 }
 
 .navmenu a.active {
   color: var(--contrast-color);
   background: var(--accent-gradient);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 4px 15px var(--accent-shadow);
 }
 
 .navmenu a i,
@@ -774,7 +785,6 @@ h6 {
   }
 
   .lang-switch {
-    margin-top: 8px;
     width: auto;
     min-width: 50px;
     height: 40px;
@@ -1117,12 +1127,12 @@ section,
 .btn-primary.btn-modern {
   background: var(--accent-gradient);
   color: var(--contrast-color);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 25px var(--accent-shadow);
 }
 
 .btn-primary.btn-modern:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 10px 28px var(--accent-shadow);
   color: var(--contrast-color);
 }
 
@@ -1268,7 +1278,7 @@ section,
 .service-card:hover {
   transform: translateY(-6px);
   border-color: var(--accent-color);
-  box-shadow: 0 14px 28px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 14px 28px var(--accent-shadow);
 }
 
 .service-icon {
@@ -1351,7 +1361,7 @@ section,
 .team-card:hover {
   transform: translateY(-6px);
   border-color: var(--accent-color);
-  box-shadow: 0 14px 28px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 14px 28px var(--accent-shadow);
 }
 
 .team-image {
@@ -1592,7 +1602,7 @@ section,
 .stat-item:hover {
   transform: translateY(-3px);
   border-color: var(--accent-color);
-  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 12px 24px var(--accent-shadow);
 }
 
 .stat-number {
@@ -1622,7 +1632,7 @@ section,
 .description-card:hover {
   transform: translateY(-3px);
   border-color: var(--accent-color);
-  box-shadow: 0 16px 30px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 16px 30px var(--accent-shadow);
 }
 
 .description-card i {
@@ -1722,7 +1732,7 @@ section,
 .contact .info-item:hover {
   transform: translateY(-5px);
   border-color: var(--accent-color);
-  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 15px 30px var(--accent-shadow);
 }
 
 .contact .info-item i {
@@ -1821,7 +1831,7 @@ section,
 
 .btn-submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 12px 28px var(--accent-shadow);
 }
 
 .btn-submit:active {
@@ -1880,11 +1890,11 @@ section,
 # Artistic Enhancements (non-intrusive, appended to override safely)
 -------------------------------------------------------------- */
 :root {
-  --art-color-1: #7dd3fc;
-  --art-color-2: #a78bfa;
-  --art-color-3: #fca5a5;
-  --art-color-4: #f9a8d4;
-  --art-color-5: #34d399;
+  --art-color-1: var(--brand-highlight);
+  --art-color-2: var(--brand-primary-400);
+  --art-color-3: #7adadf;
+  --art-color-4: var(--brand-primary);
+  --art-color-5: var(--brand-primary-600);
   --art-gradient:
     radial-gradient(1200px 800px at 10% 90%, rgba(125, 211, 252, 0.18), transparent 60%),
     radial-gradient(900px 700px at 85% 15%, rgba(167, 139, 250, 0.16), transparent 60%),
@@ -1894,9 +1904,9 @@ section,
 body::before {
   background:
     var(--art-gradient),
-    radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, color-mix(in srgb, var(--brand-primary), transparent 90%) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--brand-primary-400), transparent 90%) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, color-mix(in srgb, var(--brand-highlight), transparent 90%) 0%, transparent 50%);
 }
 
 /* Subtle grain texture */
@@ -1927,7 +1937,7 @@ body::after {
   margin: 12px auto 0;
   border-radius: 9999px;
   background: linear-gradient(90deg, var(--art-color-3), var(--art-color-2), var(--art-color-1));
-  filter: drop-shadow(0 4px 12px rgba(167, 139, 250, 0.35));
+  filter: drop-shadow(0 4px 12px var(--accent-shadow));
 }
 
 .service-card::after {
