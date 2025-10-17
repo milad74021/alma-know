@@ -115,11 +115,13 @@
    * Animation on scroll function and init
    */
   function aosInit() {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     AOS.init({
-      duration: 600,
-      easing: "ease-in-out",
+      duration: prefersReduced ? 0 : 500,
+      easing: prefersReduced ? 'linear' : 'ease-out',
       once: true,
       mirror: false,
+      disable: prefersReduced
     });
   }
   window.addEventListener("load", aosInit);
@@ -376,12 +378,14 @@
   function enhancedAosInit() {
     // Wait for page to be fully loaded
     setTimeout(() => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       AOS.init({
-        duration: 800,
-        easing: 'ease-in-out-cubic',
+        duration: prefersReduced ? 0 : 600,
+        easing: prefersReduced ? 'linear' : 'ease-out',
         once: true,
         mirror: false,
-        offset: 100,
+        offset: prefersReduced ? 0 : 80,
+        disable: prefersReduced
       });
     }, 400);
   }
