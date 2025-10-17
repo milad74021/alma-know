@@ -1237,6 +1237,18 @@ section,
   animation: float4 6s ease-in-out infinite 4.5s;
 }
 
+.card-6 {
+  top: 35%;
+  right: 32%;
+  animation: float2 6s ease-in-out infinite 6s;
+}
+
+.card-7 {
+  bottom: 22%;
+  left: 38%;
+  animation: float3 6s ease-in-out infinite 7.5s;
+}
+
 @keyframes float1 {
 
   0%,
