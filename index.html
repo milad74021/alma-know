@@ -39,11 +39,22 @@
 <body class="index-page ltr">
   <header id="header" class="header d-flex align-items-center px-sm-3 sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="almaknow" class="logo-img" />
-      </a>
+      <div class="d-flex align-items-center justify-content-between w-100 mx-lg-4">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="almaknow" class="logo-img" />
+        </a>
+        <!-- سوییچ زبان -->
+        <div class="lang-switch-container">
+          <button id="btn-lang-switch" class="lang-switch" aria-label="Switch Language">
+            <span class="lang-option" data-lang="fa">FA</span>
+            <span class="lang-option" data-lang="en">EN</span>
+            <span class="lang-option" data-lang="ar">AR</span>
+          </button>
+        </div>
+      </div>
 
-      <nav id="navmenu" class="navmenu">
+
+      <nav id="navmenu" class="navmenu mx-lg-4">
         <ul>
           <li>
             <a href="#hero" data-en="Home" data-fa="خانه" data-ar="الرئيسية" class="nav-link"></a>
@@ -56,16 +67,6 @@
           </li>
           <li>
             <a href="#contact" data-en="Contact" data-fa="تماس" data-ar="اتصل بنا" class="nav-link"></a>
-          </li>
-          <li>
-            <!-- سوییچ زبان -->
-            <div class="lang-switch-container">
-              <button id="btn-lang-switch" class="lang-switch" aria-label="Switch Language">
-                <span class="lang-option" data-lang="fa">FA</span>
-                <span class="lang-option" data-lang="en">EN</span>
-                <span class="lang-option" data-lang="ar">AR</span>
-              </button>
-            </div>
           </li>
         </ul>
       </nav>
