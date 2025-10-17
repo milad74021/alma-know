@@ -27,10 +27,12 @@
   --heading-color: #ffffff;
   /* Pure white headings */
   /* Brand Palette (AlmaKnow) */
-  --brand-primary: #0a7e83; /* teal from logo */
+  --brand-primary: #0a7e83;
+  /* teal from logo */
   --brand-primary-600: #08666a;
   --brand-primary-400: #13a8ad;
-  --brand-highlight: #22d3ee; /* bright cyan accent */
+  --brand-highlight: #22d3ee;
+  /* bright cyan accent */
 
   /* Use brand palette as site accent */
   --accent-color: var(--brand-primary);
@@ -182,9 +184,12 @@ body::before {
 
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  html, body {
+
+  html,
+  body {
     scroll-behavior: auto !important;
   }
+
   * {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
@@ -1242,7 +1247,6 @@ section,
 # Modern Services Section
 --------------------------------------------------------------*/
 .services {
-  padding: 100px 0;
   position: relative;
 }
 
@@ -1341,7 +1345,6 @@ section,
 # Modern Team Section
 --------------------------------------------------------------*/
 .team {
-  padding: 100px 0;
   position: relative;
 }
 
@@ -1392,7 +1395,8 @@ section,
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  display: none; /* hidden by default; shown when loaded */
+  display: none;
+  /* hidden by default; shown when loaded */
 }
 
 .team-card:hover .team-avatar {
@@ -1488,7 +1492,6 @@ section,
 # Modern About Section
 --------------------------------------------------------------*/
 .about {
-  padding: 100px 0;
   position: relative;
 }
 
@@ -1928,7 +1931,7 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 3px 3px;
   mix-blend-mode: soft-light;
   opacity: 0.6;
@@ -2008,7 +2011,10 @@ body::after {
 }
 
 /* Decorative gradient orbs for hero */
-.hero { position: relative; }
+.hero {
+  position: relative;
+}
+
 .art-orb {
   position: absolute;
   border-radius: 50%;
@@ -2018,10 +2024,47 @@ body::after {
   pointer-events: none;
   animation: orbFloat 16s ease-in-out infinite;
 }
-.art-orb.orb-1 { width: 380px; height: 380px; left: -120px; bottom: -80px; background: radial-gradient(circle at 30% 30%, var(--art-color-2), transparent 60%); }
-.art-orb.orb-2 { width: 260px; height: 260px; right: 10%; top: 0; background: radial-gradient(circle at 60% 40%, var(--art-color-1), transparent 60%); animation-delay: -4s; }
-.art-orb.orb-3 { width: 320px; height: 320px; right: -120px; bottom: -120px; background: radial-gradient(circle at 40% 60%, var(--art-color-4), transparent 60%); animation-delay: -8s; }
 
-@keyframes orbFloat { 0%, 100% { transform: translateY(0) translateX(0) scale(1); } 50% { transform: translateY(-18px) translateX(8px) scale(1.03); } }
+.art-orb.orb-1 {
+  width: 380px;
+  height: 380px;
+  left: -120px;
+  bottom: -80px;
+  background: radial-gradient(circle at 30% 30%, var(--art-color-2), transparent 60%);
+}
 
-@media (prefers-reduced-motion: reduce) { .art-orb { animation: none; } }
+.art-orb.orb-2 {
+  width: 260px;
+  height: 260px;
+  right: 10%;
+  top: 0;
+  background: radial-gradient(circle at 60% 40%, var(--art-color-1), transparent 60%);
+  animation-delay: -4s;
+}
+
+.art-orb.orb-3 {
+  width: 320px;
+  height: 320px;
+  right: -120px;
+  bottom: -120px;
+  background: radial-gradient(circle at 40% 60%, var(--art-color-4), transparent 60%);
+  animation-delay: -8s;
+}
+
+@keyframes orbFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-18px) translateX(8px) scale(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .art-orb {
+    animation: none;
+  }
+}
