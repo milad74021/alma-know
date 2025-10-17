@@ -426,4 +426,27 @@
 
   window.addEventListener('load', scrollHomeOnReload);
   
+  /**
+   * Team avatar image fallback: show image when it loads; otherwise keep icon
+   */
+  function initTeamAvatarFallbacks() {
+    document.querySelectorAll('.team-avatar').forEach((avatar) => {
+      const img = avatar.querySelector('img');
+      if (!img) return;
+
+      const showImage = () => avatar.classList.add('has-image');
+      const hideImage = () => avatar.classList.remove('has-image');
+
+      // If image already loaded from cache
+      if (img.complete && img.naturalWidth > 0) {
+        showImage();
+      }
+
+      img.addEventListener('load', showImage, { once: true });
+      img.addEventListener('error', hideImage, { once: true });
+    });
+  }
+
+  window.addEventListener('load', initTeamAvatarFallbacks);
+
 })();
