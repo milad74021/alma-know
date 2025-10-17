@@ -388,4 +388,38 @@
   
   window.addEventListener('load', enhancedAosInit);
   
+  /**
+   * Ensure on page reload we land on the home (hero) section
+   */
+  function scrollHomeOnReload() {
+    try {
+      const navEntries = performance.getEntriesByType && performance.getEntriesByType('navigation');
+      const isReload = navEntries && navEntries.length
+        ? navEntries[0].type === 'reload'
+        : (performance && performance.navigation && performance.navigation.type === 1);
+
+      if (!isReload) return;
+
+      const hero = document.querySelector('#hero');
+      if (!hero) return;
+
+      // Clear hash to avoid the browser auto-jumping to anchors
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+
+      // Align considering fixed header height; run after initial scroll prevention settles
+      const headerHeight = 70;
+      const targetTop = hero.offsetTop - headerHeight;
+
+      setTimeout(() => {
+        window.scrollTo({ top: Math.max(0, targetTop), behavior: 'auto' });
+      }, 350);
+    } catch (_) {
+      // no-op
+    }
+  }
+
+  window.addEventListener('load', scrollHomeOnReload);
+  
 })();
