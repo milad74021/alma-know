@@ -163,6 +163,10 @@
       document.body.classList.add("rtl");
       document.documentElement.lang = "fa";
       document.documentElement.dir = "rtl";
+    } else if (lang === "ar") {
+      document.body.classList.add("rtl");
+      document.documentElement.lang = "ar";
+      document.documentElement.dir = "rtl";
     } else {
       document.body.classList.add("ltr");
       document.documentElement.lang = "en";
@@ -173,6 +177,8 @@
     document.querySelectorAll("[data-en]").forEach((el) => {
       if (lang === "fa") {
         el.textContent = el.getAttribute("data-fa");
+      } else if (lang === "ar") {
+        el.textContent = el.getAttribute("data-ar");
       } else {
         el.textContent = el.getAttribute("data-en");
       }
@@ -182,12 +188,16 @@
       if (el.tagName.toLowerCase() === 'input' && el.type === 'submit') {
         if (lang === "fa") {
           el.value = el.getAttribute("data-fa");
+        } else if (lang === "ar") {
+          el.value = el.getAttribute("data-ar");
         } else {
           el.value = el.getAttribute("data-en");
         }
       } else {
         if (lang === "fa") {
           el.textContent = el.getAttribute("data-fa");
+        } else if (lang === "ar") {
+          el.textContent = el.getAttribute("data-ar");
         } else {
           el.textContent = el.getAttribute("data-en");
         }
@@ -196,9 +206,14 @@
 
     document.querySelectorAll("[data-en-placeholder]").forEach((el) => {
       const tag = el.tagName.toLowerCase();
-      const placeholderText = lang === "fa"
-        ? el.getAttribute("data-fa-placeholder")
-        : el.getAttribute("data-en-placeholder");
+      let placeholderText;
+      if (lang === "fa") {
+        placeholderText = el.getAttribute("data-fa-placeholder");
+      } else if (lang === "ar") {
+        placeholderText = el.getAttribute("data-ar-placeholder");
+      } else {
+        placeholderText = el.getAttribute("data-en-placeholder");
+      }
 
       if (tag === 'input' || tag === 'textarea') {
         // Set placeholder attribute only; never override user's typed value
@@ -207,6 +222,14 @@
     });
 
     currentLang = lang;
+    
+    // Update language indicators - highlight active language
+    document.querySelectorAll(".lang-option").forEach((option) => {
+      option.classList.remove("active");
+      if (option.getAttribute("data-lang") === lang) {
+        option.classList.add("active");
+      }
+    });
   }
 
   // ابتدا زبان پیش‌فرض تنظیم شود
@@ -214,11 +237,22 @@
 
   // کلیک روی دکمه برای تغییر زبان
   btnLangSwitch.addEventListener("click", () => {
-    if (currentLang === "en") {
-      switchLanguage("fa");
-    } else {
+    if (currentLang === "fa") {
       switchLanguage("en");
+    } else if (currentLang === "en") {
+      switchLanguage("ar");
+    } else {
+      switchLanguage("fa");
     }
+  });
+
+  // کلیک مستقیم روی گزینه‌های زبان
+  document.querySelectorAll(".lang-option").forEach((option) => {
+    option.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const lang = option.getAttribute("data-lang");
+      switchLanguage(lang);
+    });
   });
 
   /**

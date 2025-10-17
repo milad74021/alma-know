@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
 
   <!-- Vendor CSS Files -->
@@ -37,7 +37,7 @@
 </head>
 
 <body class="index-page ltr">
-  <header id="header" class="header d-flex align-items-center px-3 sticky-top">
+  <header id="header" class="header d-flex align-items-center px-sm-3 sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="almaknow" class="logo-img" />
@@ -46,22 +46,26 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li>
-            <a href="#hero" data-en="Home" data-fa="خانه" class="nav-link"></a>
+            <a href="#hero" data-en="Home" data-fa="خانه" data-ar="الرئيسية" class="nav-link"></a>
           </li>
           <li>
-            <a href="#services" data-en="Services" data-fa="خدمات" class="nav-link"></a>
+            <a href="#services" data-en="Services" data-fa="خدمات" data-ar="الخدمات" class="nav-link"></a>
           </li>
           <li>
-            <a href="#team" data-en="Team" data-fa="تیم" class="nav-link"></a>
+            <a href="#team" data-en="Team" data-fa="تیم" data-ar="الفريق" class="nav-link"></a>
           </li>
           <li>
-            <a href="#contact" data-en="Contact" data-fa="تماس" class="nav-link"></a>
+            <a href="#contact" data-en="Contact" data-fa="تماس" data-ar="اتصل بنا" class="nav-link"></a>
           </li>
           <li>
             <!-- سوییچ زبان -->
-            <button id="btn-lang-switch" class="lang-switch" aria-label="Switch Language">
-              🌐
-            </button>
+            <div class="lang-switch-container">
+              <button id="btn-lang-switch" class="lang-switch" aria-label="Switch Language">
+                <span class="lang-option" data-lang="fa">FA</span>
+                <span class="lang-option" data-lang="en">EN</span>
+                <span class="lang-option" data-lang="ar">AR</span>
+              </button>
+            </div>
           </li>
         </ul>
       </nav>
@@ -79,18 +83,22 @@
           <div class="col-lg-6 px-sm-5" data-aos="fade-up" data-aos-delay="100">
             <div class="about-content">
               <div class="about-text">
-                <h3 class="mb-3" data-en="Leading the Future of Technology" data-fa="رهبری آینده فناوری"></h3>
+                <h3 class="mb-3" data-en="Leading the Future of Technology" data-fa="رهبری آینده فناوری"
+                  data-ar="قيادة مستقبل التكنولوجيا"></h3>
                 <p data-en="Alma Fanavar Masir Novin specializes in developing innovative business software, web and mobile applications, IT consulting and support, digital transformation solutions, artificial intelligence, IoT, big data, and smart system implementation."
-                  data-fa="آلما فناور مسیر نوین در توسعه نرم‌افزارهای نوآورانه تجاری، اپلیکیشن‌های وب و موبایل، مشاوره و پشتیبانی فناوری اطلاعات، راهکارهای تحول دیجیتال، هوش مصنوعی، اینترنت اشیاء، کلان‌داده و پیاده‌سازی سیستم‌های هوشمند تخصص دارد.">
+                  data-fa="آلما فناور مسیر نوین در توسعه نرم‌افزارهای نوآورانه تجاری، اپلیکیشن‌های وب و موبایل، مشاوره و پشتیبانی فناوری اطلاعات، راهکارهای تحول دیجیتال، هوش مصنوعی، اینترنت اشیاء، کلان‌داده و پیاده‌سازی سیستم‌های هوشمند تخصص دارد."
+                  data-ar="تتخصص شركة ألما فناور مسير نوين في تطوير برامج الأعمال المبتكرة، وتطبيقات الويب والهاتف المحمول، والاستشارات والدعم التقني، وحلول التحول الرقمي، والذكاء الاصطناعي، وإنترنت الأشياء، والبيانات الضخمة، وتنفيذ الأنظمة الذكية.">
                 </p>
               </div>
               <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary btn-modern" data-en="Get Started" data-fa="شروع کنید">
-                  <span data-en="Get Started" data-fa="شروع کنید"></span>
+                <a href="#contact" class="btn btn-primary btn-modern" data-en="Get Started" data-fa="شروع کنید"
+                  data-ar="ابدأ الآن">
+                  <span data-en="Get Started" data-fa="شروع کنید" data-ar="ابدأ الآن"></span>
                   <i class="bi bi-arrow-left"></i>
                 </a>
-                <a href="#services" class="btn btn-outline btn-modern" data-en="Learn More" data-fa="بیشتر بدانید">
-                  <span data-en="Learn More" data-fa="بیشتر بدانید"></span>
+                <a href="#services" class="btn btn-outline btn-modern" data-en="Learn More" data-fa="بیشتر بدانید"
+                  data-ar="اعرف المزيد">
+                  <span data-en="Learn More" data-fa="بیشتر بدانید" data-ar="اعرف المزيد"></span>
                 </a>
               </div>
               <div class="about-features row gy-4 m-1 mb-3">
@@ -99,9 +107,10 @@
                     <i class="bi bi-rocket-takeoff"></i>
                   </div>
                   <div class="feature-content">
-                    <h4 data-en="Innovation First" data-fa="نوآوری در اولویت"></h4>
+                    <h4 data-en="Innovation First" data-fa="نوآوری در اولویت" data-ar="الابتكار أولاً"></h4>
                     <p data-en="Empowering startups through strategic growth and collaboration"
-                      data-fa="توانمندسازی استارتاپ‌ها از طریق رشد هدفمند و همکاری راهبردی"></p>
+                      data-fa="توانمندسازی استارتاپ‌ها از طریق رشد هدفمند و همکاری راهبردی"
+                      data-ar="تمكين الشركات الناشئة من خلال النمو الاستراتيجي والتعاون"></p>
                   </div>
                 </div>
 
@@ -110,9 +119,10 @@
                     <i class="bi bi-cpu"></i>
                   </div>
                   <div class="feature-content">
-                    <h4 data-en="Smart Solutions" data-fa="راهکارهای هوشمند"></h4>
+                    <h4 data-en="Smart Solutions" data-fa="راهکارهای هوشمند" data-ar="الحلول الذكية"></h4>
                     <p data-en="Designing intelligent systems with a focus on digital innovation"
-                      data-fa="طراحی سیستم‌های هوشمند با تمرکز بر نوآوری دیجیتال"></p>
+                      data-fa="طراحی سیستم‌های هوشمند با تمرکز بر نوآوری دیجیتال"
+                      data-ar="تصميم الأنظمة الذكية مع التركيز على الابتكار الرقمي"></p>
                   </div>
                 </div>
 
@@ -121,9 +131,10 @@
                     <i class="bi bi-shield-check"></i>
                   </div>
                   <div class="feature-content">
-                    <h4 data-en="Expert Consulting" data-fa="مشاوره تخصصی"></h4>
+                    <h4 data-en="Expert Consulting" data-fa="مشاوره تخصصی" data-ar="الاستشارات المتخصصة"></h4>
                     <p data-en="Expert consulting in business development and technology law"
-                      data-fa="ارائه مشاوره تخصصی در توسعه کسب‌وکار و حقوق فناوری"></p>
+                      data-fa="ارائه مشاوره تخصصی در توسعه کسب‌وکار و حقوق فناوری"
+                      data-ar="الاستشارات المتخصصة في تطوير الأعمال وقانون التكنولوجيا"></p>
                   </div>
                 </div>
               </div>
@@ -134,10 +145,11 @@
               <div class="description-card">
                 <i class="bi bi-quote"></i>
                 <p data-en="With a strong commitment to innovation, collaboration, and sustainable growth, Alma Fanavar Masir Novin delivers a diverse range of solutions tailored to the needs of modern organizations and businesses."
-                  data-fa="آلما فناور مسیر نوین با تمرکز بر نوآوری، همکاری و رشد پایدار، مجموعه‌ای گسترده از راهکارهای متناسب با نیازهای سازمان‌ها و کسب‌وکارهای امروزی ارائه می‌دهد.">
+                  data-fa="آلما فناور مسیر نوین با تمرکز بر نوآوری، همکاری و رشد پایدار، مجموعه‌ای گسترده از راهکارهای متناسب با نیازهای سازمان‌ها و کسب‌وکارهای امروزی ارائه می‌دهد."
+                  data-ar="مع التزام قوي بالابتكار والتعاون والنمو المستدام، تقدم شركة ألما فناور مسير نوين مجموعة متنوعة من الحلول المصممة خصيصاً لاحتياجات المنظمات والشركات الحديثة.">
                 </p>
                 <div class="quote-author">
-                  <strong data-en="Our Mission" data-fa="ماموریت ما"></strong>
+                  <strong data-en="Our Mission" data-fa="ماموریت ما" data-ar="مهمتنا"></strong>
                 </div>
               </div>
             </div>
@@ -146,33 +158,36 @@
                 <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
                   <div class="stat-number">
                     <span class="counter" data-count="8">0</span>
-                    <span data-en="+" data-fa="+"></span>
+                    <span data-en="+" data-fa="+" data-ar="+"></span>
                   </div>
-                  <div class="stat-label" data-en="Projects Completed" data-fa="پروژه تکمیل شده"></div>
+                  <div class="stat-label" data-en="Projects Completed" data-fa="پروژه تکمیل شده"
+                    data-ar="المشاريع المكتملة"></div>
                 </div>
 
                 <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
                   <div class="stat-number">
                     <span class="counter" data-count="3">0</span>
-                    <span data-en="+" data-fa="+"></span>
+                    <span data-en="+" data-fa="+" data-ar="+"></span>
                   </div>
-                  <div class="stat-label" data-en="Years Experience" data-fa="سال تجربه"></div>
+                  <div class="stat-label" data-en="Years Experience" data-fa="سال تجربه" data-ar="سنوات الخبرة"></div>
                 </div>
 
                 <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
                   <div class="stat-number">
                     <span class="counter" data-count="100">0</span>
-                    <span data-en="%" data-fa="%"></span>
+                    <span data-en="%" data-fa="%" data-ar="%"></span>
                   </div>
-                  <div class="stat-label" data-en="Client Satisfaction" data-fa="رضایت مشتری"></div>
+                  <div class="stat-label" data-en="Client Satisfaction" data-fa="رضایت مشتری" data-ar="رضا العملاء">
+                  </div>
                 </div>
 
                 <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
                   <div class="stat-number">
-                    <span data-en="7/" data-fa="7/"></span>
+                    <span data-en="7/" data-fa="7/" data-ar="7/"></span>
                     <span class="counter" data-count="24">0</span>
                   </div>
-                  <div class="stat-label" data-en="Support Available" data-fa="پشتیبانی آنلاین"></div>
+                  <div class="stat-label" data-en="Support Available" data-fa="پشتیبانی آنلاین" data-ar="الدعم المتاح">
+                  </div>
                 </div>
               </div>
             </div>
@@ -185,7 +200,7 @@
     <section id="services" class="services section">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2 data-en="Our Services" data-fa="خدمات ما"></h2>
+          <h2 data-en="Our Services" data-fa="خدمات ما" data-ar="خدماتنا"></h2>
         </div>
         <div class="d-flex align-items-center gap-4">
 
@@ -196,15 +211,18 @@
                   <div class="service-icon">
                     <i class="bi bi-lightbulb"></i>
                   </div>
-                  <h3 data-en="Entrepreneurship Consulting" data-fa="مشاوره کارآفرینی"></h3>
+                  <h3 data-en="Entrepreneurship Consulting" data-fa="مشاوره کارآفرینی" data-ar="استشارات ريادة الأعمال">
+                  </h3>
                 </div>
                 <p data-en="Guidance for launching and scaling startups with lean, market-fit strategies"
-                  data-fa="راهنمایی برای راه‌اندازی و مقیاس‌پذیری استارتاپ‌ها با رویکرد لین و محصول متناسب با بازار">
+                  data-fa="راهنمایی برای راه‌اندازی و مقیاس‌پذیری استارتاپ‌ها با رویکرد لین و محصول متناسب با بازار"
+                  data-ar="إرشاد لإطلاق وتوسيع الشركات الناشئة باستراتيجيات رشيقة ومناسبة للسوق">
                 </p>
                 <ul class="service-features">
-                  <li data-en="Idea Validation" data-fa="اعتبارسنجی ایده"></li>
-                  <li data-en="MVP Planning" data-fa="برنامه‌ریزی MVP"></li>
-                  <li data-en="Go-to-Market" data-fa="استراتژی ورود به بازار"></li>
+                  <li data-en="Idea Validation" data-fa="اعتبارسنجی ایده" data-ar="التحقق من صحة الفكرة"></li>
+                  <li data-en="MVP Planning" data-fa="برنامه‌ریزی MVP" data-ar="تخطيط المنتج الأدنى القابل للتطبيق">
+                  </li>
+                  <li data-en="Go-to-Market" data-fa="استراتژی ورود به بازار" data-ar="استراتيجية دخول السوق"></li>
                 </ul>
               </div>
             </div>
@@ -215,14 +233,15 @@
                   <div class="service-icon">
                     <i class="bi bi-briefcase"></i>
                   </div>
-                  <h3 data-en="Business Consulting" data-fa="مشاوره کسب و کار"></h3>
+                  <h3 data-en="Business Consulting" data-fa="مشاوره کسب و کار" data-ar="استشارات الأعمال"></h3>
                 </div>
                 <p data-en="End-to-end business advisory to optimize operations and drive growth"
-                  data-fa="مشاوره جامع کسب‌وکار برای بهینه‌سازی عملیات و رشد درآمد"></p>
+                  data-fa="مشاوره جامع کسب‌وکار برای بهینه‌سازی عملیات و رشد درآمد"
+                  data-ar="استشارات أعمال شاملة لتحسين العمليات ودفع النمو"></p>
                 <ul class="service-features">
-                  <li data-en="Business Strategy" data-fa="استراتژی کسب‌وکار"></li>
-                  <li data-en="Process Optimization" data-fa="بهینه‌سازی فرآیند"></li>
-                  <li data-en="Financial Planning" data-fa="برنامه‌ریزی مالی"></li>
+                  <li data-en="Business Strategy" data-fa="استراتژی کسب‌وکار" data-ar="استراتيجية الأعمال"></li>
+                  <li data-en="Process Optimization" data-fa="بهینه‌سازی فرآیند" data-ar="تحسين العمليات"></li>
+                  <li data-en="Financial Planning" data-fa="برنامه‌ریزی مالی" data-ar="التخطيط المالي"></li>
                 </ul>
               </div>
             </div>
@@ -234,14 +253,15 @@
                   <div class="service-icon">
                     <i class="bi bi-robot"></i>
                   </div>
-                  <h3 data-en="AI Solutions" data-fa="راهکارهای هوش مصنوعی"></h3>
+                  <h3 data-en="AI Solutions" data-fa="راهکارهای هوش مصنوعی" data-ar="حلول الذكاء الاصطناعي"></h3>
                 </div>
                 <p data-en="Artificial intelligence and machine learning solutions for business automation"
-                  data-fa="راهکارهای هوش مصنوعی و یادگیری ماشین برای اتوماسیون کسب‌وکار"></p>
+                  data-fa="راهکارهای هوش مصنوعی و یادگیری ماشین برای اتوماسیون کسب‌وکار"
+                  data-ar="حلول الذكاء الاصطناعي والتعلم الآلي لأتمتة الأعمال"></p>
                 <ul class="service-features">
-                  <li data-en="Machine Learning" data-fa="یادگیری ماشین"></li>
-                  <li data-en="Process Automation" data-fa="اتوماسیون فرآیند"></li>
-                  <li data-en="Data Analytics" data-fa="تحلیل داده"></li>
+                  <li data-en="Machine Learning" data-fa="یادگیری ماشین" data-ar="التعلم الآلي"></li>
+                  <li data-en="Process Automation" data-fa="اتوماسیون فرآیند" data-ar="أتمتة العمليات"></li>
+                  <li data-en="Data Analytics" data-fa="تحلیل داده" data-ar="تحليل البيانات"></li>
                 </ul>
               </div>
             </div>
@@ -252,14 +272,15 @@
                   <div class="service-icon">
                     <i class="bi bi-code-slash"></i>
                   </div>
-                  <h3 data-en="Web Development" data-fa="توسعه وب"></h3>
+                  <h3 data-en="Web Development" data-fa="توسعه وب" data-ar="تطوير الويب"></h3>
                 </div>
                 <p data-en="Custom web applications built with modern technologies and frameworks"
-                  data-fa="اپلیکیشن‌های وب سفارشی با استفاده از تکنولوژی‌ها و فریمورک‌های مدرن"></p>
+                  data-fa="اپلیکیشن‌های وب سفارشی با استفاده از تکنولوژی‌ها و فریمورک‌های مدرن"
+                  data-ar="تطبيقات ويب مخصصة مبنية بتقنيات وأطر عمل حديثة"></p>
                 <ul class="service-features">
-                  <li data-en="Responsive Design" data-fa="طراحی ریسپانسیو"></li>
-                  <li data-en="Modern Frameworks" data-fa="فریمورک‌های مدرن"></li>
-                  <li data-en="Performance Optimization" data-fa="بهینه‌سازی عملکرد"></li>
+                  <li data-en="Responsive Design" data-fa="طراحی ریسپانسیو" data-ar="تصميم متجاوب"></li>
+                  <li data-en="Modern Frameworks" data-fa="فریمورک‌های مدرن" data-ar="أطر عمل حديثة"></li>
+                  <li data-en="Performance Optimization" data-fa="بهینه‌سازی عملکرد" data-ar="تحسين الأداء"></li>
                 </ul>
               </div>
             </div>
@@ -270,14 +291,18 @@
                   <div class="service-icon">
                     <i class="bi bi-phone"></i>
                   </div>
-                  <h3 data-en="Mobile Development" data-fa="توسعه موبایل"></h3>
+                  <h3 data-en="Mobile Development" data-fa="توسعه موبایل" data-ar="تطوير تطبيقات الجوال"></h3>
                 </div>
                 <p data-en="Native and cross-platform mobile applications for iOS and Android"
-                  data-fa="اپلیکیشن‌های موبایل نیتیو و کراس پلتفرم برای iOS و Android"></p>
+                  data-fa="اپلیکیشن‌های موبایل نیتیو و کراس پلتفرم برای iOS و Android"
+                  data-ar="تطبيقات جوال أصلية ومتعددة المنصات لنظامي iOS و Android"></p>
                 <ul class="service-features">
-                  <li data-en="iOS & Android Apps" data-fa="اپلیکیشن‌های iOS و Android"></li>
-                  <li data-en="Cross-Platform Solutions" data-fa="راهکارهای کراس پلتفرم"></li>
-                  <li data-en="App Store Optimization" data-fa="بهینه‌سازی فروشگاه اپ"></li>
+                  <li data-en="iOS & Android Apps" data-fa="اپلیکیشن‌های iOS و Android" data-ar="تطبيقات iOS و Android">
+                  </li>
+                  <li data-en="Cross-Platform Solutions" data-fa="راهکارهای کراس پلتفرم" data-ar="حلول متعددة المنصات">
+                  </li>
+                  <li data-en="App Store Optimization" data-fa="بهینه‌سازی فروشگاه اپ" data-ar="تحسين متجر التطبيقات">
+                  </li>
                 </ul>
               </div>
             </div>
@@ -289,14 +314,16 @@
                   <div class="service-icon">
                     <i class="bi bi-cloud"></i>
                   </div>
-                  <h3 data-en="Cloud Services" data-fa="خدمات ابری"></h3>
+                  <h3 data-en="Cloud Services" data-fa="خدمات ابری" data-ar="الخدمات السحابية"></h3>
                 </div>
                 <p data-en="Scalable cloud infrastructure and migration services"
-                  data-fa="زیرساخت ابری مقیاس‌پذیر و خدمات مهاجرت"></p>
+                  data-fa="زیرساخت ابری مقیاس‌پذیر و خدمات مهاجرت"
+                  data-ar="بنية تحتية سحابية قابلة للتوسع وخدمات الترحيل"></p>
                 <ul class="service-features">
-                  <li data-en="Cloud Migration" data-fa="مهاجرت ابری"></li>
-                  <li data-en="Scalable Infrastructure" data-fa="زیرساخت مقیاس‌پذیر"></li>
-                  <li data-en="24/7 Support" data-fa="پشتیبانی ۲۴/۷"></li>
+                  <li data-en="Cloud Migration" data-fa="مهاجرت ابری" data-ar="الترحيل السحابي"></li>
+                  <li data-en="Scalable Infrastructure" data-fa="زیرساخت مقیاس‌پذیر" data-ar="بنية تحتية قابلة للتوسع">
+                  </li>
+                  <li data-en="24/7 Support" data-fa="پشتیبانی ۲۴/۷" data-ar="دعم على مدار الساعة"></li>
                 </ul>
               </div>
             </div>
@@ -307,14 +334,16 @@
                   <div class="service-icon">
                     <i class="bi bi-gear"></i>
                   </div>
-                  <h3 data-en="IT Consulting" data-fa="مشاوره فناوری اطلاعات"></h3>
+                  <h3 data-en="IT Consulting" data-fa="مشاوره فناوری اطلاعات" data-ar="استشارات تكنولوجيا المعلومات">
+                  </h3>
                 </div>
                 <p data-en="Strategic technology consulting and digital transformation guidance"
-                  data-fa="مشاوره راهبردی فناوری و راهنمایی تحول دیجیتال"></p>
+                  data-fa="مشاوره راهبردی فناوری و راهنمایی تحول دیجیتال"
+                  data-ar="استشارات تكنولوجية استراتيجية وإرشاد التحول الرقمي"></p>
                 <ul class="service-features">
-                  <li data-en="Digital Transformation" data-fa="تحول دیجیتال"></li>
-                  <li data-en="Technology Strategy" data-fa="استراتژی فناوری"></li>
-                  <li data-en="System Integration" data-fa="یکپارچه‌سازی سیستم"></li>
+                  <li data-en="Digital Transformation" data-fa="تحول دیجیتال" data-ar="التحول الرقمي"></li>
+                  <li data-en="Technology Strategy" data-fa="استراتژی فناوری" data-ar="استراتيجية التكنولوجيا"></li>
+                  <li data-en="System Integration" data-fa="یکپارچه‌سازی سیستم" data-ar="تكامل الأنظمة"></li>
                 </ul>
               </div>
             </div>
@@ -325,14 +354,15 @@
                   <div class="service-icon">
                     <i class="bi bi-shield-check"></i>
                   </div>
-                  <h3 data-en="Cybersecurity" data-fa="امنیت سایبری"></h3>
+                  <h3 data-en="Cybersecurity" data-fa="امنیت سایبری" data-ar="الأمن السيبراني"></h3>
                 </div>
                 <p data-en="Comprehensive security solutions to protect your digital assets"
-                  data-fa="راهکارهای جامع امنیتی برای محافظت از دارایی‌های دیجیتال شما"></p>
+                  data-fa="راهکارهای جامع امنیتی برای محافظت از دارایی‌های دیجیتال شما"
+                  data-ar="حلول أمنية شاملة لحماية أصولك الرقمية"></p>
                 <ul class="service-features">
-                  <li data-en="Security Assessment" data-fa="ارزیابی امنیتی"></li>
-                  <li data-en="Threat Protection" data-fa="محافظت از تهدیدات"></li>
-                  <li data-en="Compliance Support" data-fa="پشتیبانی از انطباق"></li>
+                  <li data-en="Security Assessment" data-fa="ارزیابی امنیتی" data-ar="تقييم الأمن"></li>
+                  <li data-en="Threat Protection" data-fa="محافظت از تهدیدات" data-ar="الحماية من التهديدات"></li>
+                  <li data-en="Compliance Support" data-fa="پشتیبانی از انطباق" data-ar="دعم الامتثال"></li>
                 </ul>
               </div>
             </div>
@@ -343,14 +373,16 @@
                   <div class="service-icon">
                     <i class="bi bi-file-earmark-text"></i>
                   </div>
-                  <h3 data-en="Technology Law" data-fa="حقوق فناوری"></h3>
+                  <h3 data-en="Technology Law" data-fa="حقوق فناوری" data-ar="قانون التكنولوجيا"></h3>
                 </div>
                 <p data-en="Legal advisory for technology, IP, compliance, and contracts"
-                  data-fa="مشاوره حقوقی در حوزه فناوری، مالکیت فکری، انطباق و قراردادها"></p>
+                  data-fa="مشاوره حقوقی در حوزه فناوری، مالکیت فکری، انطباق و قراردادها"
+                  data-ar="استشارات قانونية للتكنولوجيا والملكية الفكرية والامتثال والعقود"></p>
                 <ul class="service-features">
-                  <li data-en="IP & Licensing" data-fa="مالکیت فکری و لیسانس"></li>
-                  <li data-en="Data Protection & Privacy" data-fa="حفاظت از داده و حریم خصوصی"></li>
-                  <li data-en="Technology Contracts" data-fa="قراردادهای فناوری"></li>
+                  <li data-en="IP & Licensing" data-fa="مالکیت فکری و لیسانس" data-ar="الملكية الفكرية والترخيص"></li>
+                  <li data-en="Data Protection & Privacy" data-fa="حفاظت از داده و حریم خصوصی"
+                    data-ar="حماية البيانات والخصوصية"></li>
+                  <li data-en="Technology Contracts" data-fa="قراردادهای فناوری" data-ar="عقود التكنولوجيا"></li>
                 </ul>
               </div>
             </div>
@@ -362,7 +394,7 @@
     <section id="team" class="team section">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2 data-en="Our Team" data-fa="تیم ما"></h2>
+          <h2 data-en="Our Team" data-fa="تیم ما" data-ar="فريقنا"></h2>
         </div>
 
         <div class="row gy-4">
@@ -382,12 +414,13 @@
                 </div>
               </div>
               <div class="team-content">
-                <h3 data-en="Milad Moradi" data-fa="میلاد مرادی"></h3>
+                <h3 data-en="Milad Moradi" data-fa="میلاد مرادی" data-ar="ميلاد مرادي"></h3>
                 <p class="team-position" data-en="Chairman of the Board & Founder"
-                  data-fa="رییس هیات‌‌‌‌مدیره و بنیان‌گذار"></p>
+                  data-fa="رییس هیات‌‌‌‌مدیره و بنیان‌گذار" data-ar="رئيس مجلس الإدارة والمؤسس"></p>
                 <p class="team-description"
                   data-en="Visionary leader with 10+ years of experience in technology and business development"
-                  data-fa="با بیش از ۱۰ سال تجربه در فناوری و توسعه کسب‌وکار"></p>
+                  data-fa="با بیش از ۱۰ سال تجربه در فناوری و توسعه کسب‌وکار"
+                  data-ar="قائد ذو رؤية مع أكثر من 10 سنوات من الخبرة في التكنولوجيا وتطوير الأعمال"></p>
               </div>
             </div>
           </div>
@@ -407,9 +440,10 @@
                 </div>
               </div>
               <div class="team-content">
-                <h3 data-en="Saeid Moradi" data-fa="سعید مرادی"></h3>
-                <p class="team-position" data-en="CEO" data-fa="مدیرعامل"></p>
-                <p class="team-description" data-en="Technology Law Specialist" data-fa="متخصص حقوق فناوری"></p>
+                <h3 data-en="Saeid Moradi" data-fa="سعید مرادی" data-ar="سعيد مرادي"></h3>
+                <p class="team-position" data-en="CEO" data-fa="مدیرعامل" data-ar="الرئيس التنفيذي"></p>
+                <p class="team-description" data-en="Technology Law Specialist" data-fa="متخصص حقوق فناوری"
+                  data-ar="متخصص في قانون التكنولوجيا"></p>
               </div>
             </div>
           </div>
@@ -429,10 +463,12 @@
                 </div>
               </div>
               <div class="team-content">
-                <h3 data-en="Innovation Team" data-fa="تیم نوآوری"></h3>
-                <p class="team-position" data-en="Lead Developers" data-fa="توسعه‌دهندگان"></p>
+                <h3 data-en="Innovation Team" data-fa="تیم نوآوری" data-ar="فريق الابتكار"></h3>
+                <p class="team-position" data-en="Lead Developers" data-fa="توسعه‌دهندگان" data-ar="المطورون الرئيسيون">
+                </p>
                 <p class="team-description" data-en="Turning ideas into world‑class web and mobile experiences."
-                  data-fa="ایده‌ها را به تجربه‌های ممتاز وب و موبایل تبدیل می‌کنیم."></p>
+                  data-fa="ایده‌ها را به تجربه‌های ممتاز وب و موبایل تبدیل می‌کنیم."
+                  data-ar="نحول الأفكار إلى تجارب ويب وجوال عالمية المستوى."></p>
               </div>
             </div>
           </div>
@@ -443,7 +479,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact section transparent-background">
       <div class="container section-title" data-aos="fade-up">
-        <h2 data-en="Contact" data-fa="تماس"></h2>
+        <h2 data-en="Contact" data-fa="تماس" data-ar="اتصل بنا"></h2>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -454,7 +490,7 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="300">
                   <div class="d-flex align-items-center gap-4">
                     <i class="bi bi-telephone"></i>
-                    <h3 data-en="Call Us" data-fa="تماس با ما"></h3>
+                    <h3 data-en="Call Us" data-fa="تماس با ما" data-ar="اتصل بنا"></h3>
                   </div>
                   <p style="direction: ltr">+98 914 287 0508</p>
                   <p style="direction: ltr">+98 993 495 7500</p>
@@ -465,7 +501,7 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="400">
                   <div class="d-flex align-items-center gap-4">
                     <i class="bi bi-envelope"></i>
-                    <h3 data-en="Email Us" data-fa="ایمیل"></h3>
+                    <h3 data-en="Email Us" data-fa="ایمیل" data-ar="البريد الإلكتروني"></h3>
                   </div>
                   <p style="direction: ltr !important">
                     almaknowofficial@gmail.com
@@ -477,10 +513,10 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="500">
                   <div class="d-flex align-items-center gap-4">
                     <i class="bi bi-clock"></i>
-                    <h3 data-en="Open Hours" data-fa="ساعت کاری"></h3>
+                    <h3 data-en="Open Hours" data-fa="ساعت کاری" data-ar="ساعات العمل"></h3>
                   </div>
-                  <p data-en="Saturday - Wednesday" data-fa="شنبه تا چهارشنبه"></p>
-                  <p data-en="9:00AM - 05:00PM" data-fa="۹ صبح تا ۱۷ عصر"></p>
+                  <p data-en="Saturday - Wednesday" data-fa="شنبه تا چهارشنبه" data-ar="السبت - الأربعاء"></p>
+                  <p data-en="9:00AM - 05:00PM" data-fa="۹ صبح تا ۱۷ عصر" data-ar="9:00 صباحاً - 5:00 مساءً"></p>
                 </div>
               </div>
 
@@ -488,10 +524,10 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="200">
                   <div class="d-flex align-items-center gap-4">
                     <i class="bi bi-geo-alt"></i>
-                    <h3 data-en="Address" data-fa="آدرس"></h3>
+                    <h3 data-en="Address" data-fa="آدرس" data-ar="العنوان"></h3>
                   </div>
-                  <p data-en="Tehran, Iran" data-fa="تهران, ایران"></p>
-                  <p data-en="--" data-fa="--"></p>
+                  <p data-en="Tehran, Iran" data-fa="تهران, ایران" data-ar="طهران، إيران"></p>
+                  <p data-en="--" data-fa="--" data-ar="--"></p>
                   <!-- <p data-en="123 Main St, Tehran" data-fa="123 مین ست, تهران"></p> -->
                 </div>
               </div>
@@ -568,7 +604,8 @@
       <div class="copyright">
         &copy;
         <span data-en="Alma Fanavar Masir Novin Company, All Rights Reserved."
-          data-fa="شرکت آلما فناور مسیر نوین. تمامی حقوق محفوظ است."></span>
+          data-fa="شرکت آلما فناور مسیر نوین. تمامی حقوق محفوظ است."
+          data-ar="شركة ألما فناور مسير نوين. جميع الحقوق محفوظة."></span>
       </div>
     </div>
   </footer>
