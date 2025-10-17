@@ -20,12 +20,17 @@
   --default-font: "Inter", "Poppins", sans-serif; */
 
   /* Global Colors - Modern Color Palette */
-  --background-color: #0a0a0a; /* Dark background */
-  --default-color: #e0e0e0; /* Light text */
-  --heading-color: #ffffff; /* Pure white headings */
-  --accent-color: #6366f1; /* Modern indigo */
+  --background-color: #0a0a0a;
+  /* Dark background */
+  --default-color: #e0e0e0;
+  /* Light text */
+  --heading-color: #ffffff;
+  /* Pure white headings */
+  --accent-color: #6366f1;
+  /* Modern indigo */
   --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-  --surface-color: rgba(255, 255, 255, 0.05); /* Glass morphism */
+  --surface-color: rgba(255, 255, 255, 0.05);
+  /* Glass morphism */
   --surface-hover: rgba(255, 255, 255, 0.1);
   --contrast-color: #ffffff;
   --text-muted: #a0a0a0;
@@ -37,11 +42,16 @@
 
   /* Nav Menu Colors - Modern Navigation */
   --nav-color: #000;
-  --nav-hover-color: #e0e0e0; /* Accent color on hover */
-  --nav-mobile-background-color: rgba(10, 10, 10, 0.95); /* Dark mobile nav */
-  --nav-dropdown-background-color: rgba(10, 10, 10, 0.95); /* Dark dropdown */
-  --nav-dropdown-color: #e0e0e0; /* Light dropdown text */
-  --nav-dropdown-hover-color: #6366f1; /* Accent hover */
+  --nav-hover-color: #e0e0e0;
+  /* Accent color on hover */
+  --nav-mobile-background-color: rgba(10, 10, 10, 0.95);
+  /* Dark mobile nav */
+  --nav-dropdown-background-color: rgba(10, 10, 10, 0.95);
+  /* Dark dropdown */
+  --nav-dropdown-color: #e0e0e0;
+  /* Light dropdown text */
+  --nav-dropdown-hover-color: #6366f1;
+  /* Accent hover */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -97,6 +107,10 @@ body {
   line-height: 1.6;
   padding-top: clamp(40px, 6vw, 70px);
   visibility: hidden;
+}
+
+.hero p {
+  text-align: justify;
 }
 
 body.loaded {
@@ -675,11 +689,6 @@ h6 {
     min-height: auto;
   }
 
-  .hero-visual {
-    height: 400px;
-    margin-top: 2rem;
-  }
-
   .service-card,
   .team-card {
     margin-bottom: 2rem;
@@ -799,30 +808,6 @@ h6 {
     justify-content: center;
     padding: 10px 20px;
     /* Reduced padding */
-  }
-
-  .hero-visual {
-    height: 220px;
-    /* Slightly taller */
-    margin-top: 1.5rem;
-    /* Reduced margin */
-  }
-
-  .floating-card {
-    padding: 12px;
-    /* Slightly more padding */
-    margin: 5px;
-    /* Added margin between cards */
-  }
-
-  .floating-card i {
-    font-size: 1.2rem;
-    /* Slightly larger icon */
-  }
-
-  .floating-card span {
-    font-size: 0.7rem;
-    /* Adjusted font size */
   }
 
   .section-title {
@@ -956,22 +941,6 @@ h6 {
     padding: 40px 0 30px;
     min-height: auto;
   }
-
-  .hero-visual {
-    height: 200px;
-  }
-
-  .floating-card {
-    padding: 8px;
-  }
-
-  .floating-card i {
-    font-size: 1rem;
-  }
-
-  .floating-card span {
-    font-size: 0.6rem;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -1033,6 +1002,7 @@ section,
 
 /* Consolidate into a single, more responsive media query */
 @media (max-width: 1200px) {
+
   section,
   .section {
     scroll-margin-top: clamp(55px, 10vw, 150px);
@@ -1156,145 +1126,6 @@ section,
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
   color: var(--default-color);
-}
-
-/* Floating Cards Animation */
-.hero-visual {
-  position: relative;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.floating-cards {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.floating-card {
-  position: absolute;
-  background: var(--surface-color);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.floating-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
-  border-color: var(--accent-color);
-}
-
-.floating-card i {
-  font-size: 2rem;
-  color: var(--accent-color);
-}
-
-.floating-card span {
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: center;
-  color: var(--default-color);
-}
-
-.card-1 {
-  top: 10%;
-  left: 10%;
-  animation: float1 6s ease-in-out infinite;
-}
-
-.card-2 {
-  top: 20%;
-  right: 15%;
-  animation: float2 6s ease-in-out infinite 1.5s;
-}
-
-.card-3 {
-  bottom: 30%;
-  left: 20%;
-  animation: float3 6s ease-in-out infinite 3s;
-}
-
-.card-4 {
-  bottom: 10%;
-  right: 10%;
-  animation: float4 6s ease-in-out infinite 4.5s;
-}
-
-.card-5 {
-  bottom: -10%;
-  left: 15%;
-  animation: float4 6s ease-in-out infinite 4.5s;
-}
-
-.card-6 {
-  top: 35%;
-  right: 32%;
-  animation: float2 6s ease-in-out infinite 6s;
-}
-
-.card-7 {
-  bottom: 22%;
-  left: 38%;
-  animation: float3 6s ease-in-out infinite 7.5s;
-}
-
-@keyframes float1 {
-
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-20px) rotate(5deg);
-  }
-}
-
-@keyframes float2 {
-
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-15px) rotate(-3deg);
-  }
-}
-
-@keyframes float3 {
-
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-25px) rotate(4deg);
-  }
-}
-
-@keyframes float4 {
-
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-18px) rotate(-2deg);
-  }
 }
 
 @media (max-width: 768px) {
@@ -1650,14 +1481,12 @@ section,
 }
 
 .about-features {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .feature-item {
   display: flex;
-  align-items: flex-start;
   gap: 20px;
-  margin-bottom: 2rem;
   padding: 20px;
   background: var(--surface-color);
   backdrop-filter: blur(20px);
@@ -1824,12 +1653,6 @@ section,
 
   .about-text p {
     font-size: 1rem;
-  }
-
-  .feature-item {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
   }
 
   .feature-icon {
